@@ -14,4 +14,10 @@ export class EmployeeService {
     console.log(this.httpClient.get<Employee[]>(`${this.baseURL}`));
     return this.httpClient.get<Employee[]>(`${this.baseURL}`);
   }
+
+  createEmployee(employee : Employee) : Observable<object>{
+    // console.log(employee)
+    return this.httpClient.post(`${this.baseURL}`,employee);
+  }
+
 }
